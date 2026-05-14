@@ -66,11 +66,8 @@ python salvageJpg.py <入力ファイル> [オプション]
 ### 例
 
 ```bash
-# 推奨: イーガー検索モード2、100x100以上の画像のみ
-python salvageJpg.py disk.img -e2 -s 100 -o ./recovered_images/
-
-# 最大バイト数を8MBに制限
-python salvageJpg.py disk.img -e2 -m 8388608 
+# 推奨: イーガー検索モード2、100x100以上の画像のみ。最大バイト数を8MBに制限（高速探索）
+python salvageJpg.py disk.img -e2 -s 100 -m $((16*1024*1024)) -o ./recovered_images/
 ```
 
 ## 出力
@@ -158,11 +155,9 @@ python salvageJpg.py <input_file> [options]
 ### Examples
 
 ```bash
-# Recommended: Eager search mode 2, save only images 100x100 or larger
-python salvageJpg.py disk.img -e2 -s 100 -o ./recovered_images/
+# Recommended: Eager search mode 2, save only images 100x100 or larger, under the size of 16MB
+python salvageJpg.py disk.img -e2 -s 100 -m $((16*1024*1024)) -o ./recovered_images/
 
-# Limit max bytes to 8MB
-python salvageJpg.py disk.img -e2 -m 8388608
 ```
 
 ## Output
